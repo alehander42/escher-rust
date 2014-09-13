@@ -1,0 +1,5 @@
+{Int -> Int}
+(function fact [value]
+  (if [= value 1]
+    1
+    (* [self (decr value)])))
