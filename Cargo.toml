@@ -4,9 +4,10 @@ name = "escher"
 version = "0.2.0"
 authors = [ "Alexander Ivanov <alehander42@gmail.com>" ]
 
-[[bin]]
+[lib]
 name = "escher"
-path = "bin/escher.rs"
+path = "src/escher.rs"
+
 
 
 
