@@ -2,6 +2,7 @@
 pub enum Cell {
     IntCell(uint),
     IdentCell(String),
+    StringCell(String),
     ListCell(Vec<Cell>)
 }
 

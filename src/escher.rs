@@ -2,6 +2,6 @@
 mod parser;
 mod sexp;
 fn main() {
-    let a = parser::parse("(define e (+ 2 4))e");
+    let a = parser::parse("\"ef\"");
     println!("{}", a)
 }

@@ -18,6 +18,9 @@ fn parse_cells(source: &str) -> ParseResult {
     if first == '(' {
         return parse_list(trimmed_source.slice_from(1));
     }
+    else if first == '"' {
+        return parse_string(trimmed_source.slice_from(1));
+    }
     else if first.is_digit() {
         return parse_int(trimmed_source);
     }
@@ -77,4 +80,16 @@ fn parse_ident(source: &str) -> ParseResult {
         index += 1;
     }
     return ParseResult{value: IdentCell(label), left: source.slice_from(index).to_string()}
+}
+
+fn parse_string(source: &str) -> ParseResult {
+    // parse e" 2 -> StringCell("e"), " 2"
+    let mut label = String::from_str("");
+    let mut index = 0u;
+
+    while index < source.len() && source.char_at(index) != '"' {
+        label.push_char(source.char_at(index));
+        index += 1;
+    }
+    return ParseResult{value: StringCell(label), left: source.slice_from(index + 1).to_string()}
 }
