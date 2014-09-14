@@ -3,5 +3,8 @@ mod parser;
 mod sexp;
 fn main() {
     let a = parser::parse("\"ef\"");
-    println!("{}", a)
+    match a {
+        Ok(a) => { println!("{}", a.sexp); }
+        Err(message) => {println!("fail {}", message); }
+    }
 }
