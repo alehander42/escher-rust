@@ -3,3 +3,27 @@
   (if [= value 1]
     1
     (* [self (decr value)])))
+
+
+(+ 2 4) ->
+
+(sum [2 4])
+(if #t 2 4) ->
+
+(cond [#t 2] [#t 4])
+
+
+sum :: [Int] -> Int
++ :: Int.... -> Int
+cond<a> :: [Bool a]* -> a
+if<a> :: Bool -> a -> a -> a
+function<a> :: Id -> [Id] -> Any* -> a -> a
+
+Type Error:
+  expected function :: Id [Id] ...
+  got function lala [2]([Int]) instead of [Id]
+
+
+
+-> parse
+make a peg parser
